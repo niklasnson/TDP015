@@ -1,0 +1,25 @@
+operations = []
+operations.append(lambda x, y: x and y)
+operations.append(lambda x, y: not x and y)
+operations.append(lambda x, y: x and not y)
+operations.append(lambda x, y: not(not x and not y))
+operations.append(lambda x, y: not (x and not y))
+operations.append(lambda x, y: not(not (y and not x)))
+operations.append(lambda x, y: not (x and y))
+operations.append(lambda x, y: not x and not y)
+
+operations.append(lambda x, y: not(x and y))
+operations.append(lambda x, y: not(not x and y))
+operations.append(lambda x, y: not(x and not y))
+operations.append(lambda x, y: not(not(not x and not y)))
+operations.append(lambda x, y: not(not (x and not y)))
+operations.append(lambda x, y: not(not(not (y and not x))))
+operations.append(lambda x, y: not(not (x and y)))
+operations.append(lambda x, y: not(not x and not y))
+
+for item in operations:
+    print("*"*100)
+    print(int(item(False, False)))
+    print(int(item(False, True)))
+    print(int(item(True, False)))
+    print(int(item(True, True)))
