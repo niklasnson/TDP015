@@ -100,10 +100,10 @@ class Imp:
         return(not lhs or rhs)
 
     def variables(self, attr):
-        operators = []
-        for v in self.vars:
-            if type(v) is Var:
-                operators.append(v.get_k())
+        operators = []#example = Con(Var('a'), Dis(Var('b'), Var('c')))
+#example.value({'a': True, 'b': True, 'c': False})
+
+#print(satisfiable(example))
             else:
                 operators.append(v.variables(attr))
         return list(itertools.chain(*operators))
