@@ -1,23 +1,14 @@
 def subsets(s):
-    items = [[(a + 1,b + 1) for a in range(max(s))] for b in range(max(s))]
-    items = flatten_array(items)
-    items = remove_dublicates(items)
-    for a in range(max(s)):
-        items.append((a + 1,0))
-    return items
+    t = []
+    for el in s:
+        tmp = set()
+        tmp.add(el)
+        t.append(tmp)
+        for le in t:
+            print(len(t))
+    return t
+# (1,2) => [(0), (1), (2), (1,2)]
+# (a,b) => [(0), (a), (b), (a,b)]
+# (1,2,3) => [(0), (1), (2), (3), (1,2), (1,3), (2,3), (1,2,3) ]
 
-def flatten_array(items):
-    flat = []
-    for p in items:
-        for i in p:
-            flat.append(i)
-    return flat
-
-def remove_dublicates(items):
-    clean = []
-    for i in items:
-        if (i[1], i[0]) not in clean:
-            clean.append(i)
-    return clean
-
-print(subsets((1,2)))
+print(subsets((1,2,3)))
