@@ -47,6 +47,8 @@ def calculate_the_month_item(a):
 
 def calculate_day_item(a, b):
     if a % 4 == 0 and (a % 100 != 0 or a % 400 == 0):
+        if b - 1 == 0:
+            b = 7
         b = b - 1
     return b
 
@@ -61,4 +63,4 @@ def day_of_week(y, m, d):
     data = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
     return data[calc]
 
-print(day_of_week(1845, 5, 23))
+print(day_of_week(1974, 9, 7))
